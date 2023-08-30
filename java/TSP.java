@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Main {
+class TSP {
 
     static int N;
     static int final_path[];
@@ -9,7 +9,7 @@ class Main {
 
     static int final_res = Integer.MAX_VALUE;
 
-    Main(int n) {
+    TSP(int n) {
         N = n;
         final_path = new int[n + 1];
         visited = new boolean[n];
@@ -97,7 +97,7 @@ class Main {
         }
     }
 
-    static void TSP(int adj[][]) {
+    static void callTSP(int adj[][]) {
         int curr_path[] = new int[N + 1];
 
         int curr_bound = 0;
@@ -122,14 +122,14 @@ class Main {
         System.out.println("Enter the no of cities visited:");
         n = in.nextInt();
         int adj[][] = new int[n][n];
-        Main ob = new Main(n); // constructor called
+        TSP ob = new TSP(n); 
         int i, j;
         for (i = 0; i < n; i++) {
             for (j = 0; j < n; j++)
                 adj[i][j] = in.nextInt();
         }
 
-        TSP(adj);
+        callTSP(adj);
 
         System.out.printf("Minimum cost : %d\n", final_res);
         System.out.printf("Path Taken : ");
