@@ -1,6 +1,6 @@
 import java.util.*;
 
-class NQueensRonit {
+class NQueens {
 
     public static void helper(char[][] board, List<List<String>> allBoards, int col) {
         if (col == board.length) {
